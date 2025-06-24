@@ -22,7 +22,7 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const About = ({ setPage }: Props) => {
+const READMEPage = ({ setPage }: Props) => { // Renamed component
   const [loading, setLoading] = useState(false);
 
   const downloadCV = () => {
@@ -37,7 +37,7 @@ const About = ({ setPage }: Props) => {
   };
 
   useEffect(() => {
-    setPage("about.html");
+    setPage("README.md"); // Updated page identifier
   });
 
   return (
@@ -56,7 +56,7 @@ const About = ({ setPage }: Props) => {
           color="#0BCEAF"
           mb={4}
         >
-          About Me
+          README.md
         </Heading>
         {aboutMe.description.map((text, idx) => (
           <Text
@@ -64,6 +64,7 @@ const About = ({ setPage }: Props) => {
             fontSize={{ base: "lg", md: "xl" }}
             mb={idx === 0 ? 6 : 0}
             lineHeight="tall"
+            whiteSpace="pre-line"
           >
             {text}
           </Text>
@@ -135,4 +136,4 @@ const About = ({ setPage }: Props) => {
   );
 };
 
-export default About;
+export default READMEPage; // Updated export

@@ -3,10 +3,11 @@ import {
   VscFiles,
   VscDebugAlt,
   //VscGithub,
-  VscAccount,
+  // VscAccount, // No longer needed directly here if replaced
   VscSettingsGear,
   VscMail,
 } from "react-icons/vsc";
+import { SiMarkdown } from "react-icons/si"; // Import Markdown icon
 import ActivityBarIcon from "./ActivityBarIcon";
 
 interface Props {
@@ -54,9 +55,9 @@ const ActivityBar = ({ selectedPage, onSelectPage }: Props) => {
       </Box>
       <Box marginBottom={2} width={"100%"}>
         <ActivityBarIcon
-          Label="About"
-          Image={VscAccount}
-          Navigate="about.html"
+          Label="README" // Updated Label
+          Image={SiMarkdown} // Updated Icon
+          Navigate="README.md" // Updated Navigate value
           Link="/about"
           selectedPage={selectedPage}
           onSelectPage={onSelectPage}

@@ -3,10 +3,11 @@ import { useState } from "react";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import ExplorerItem from "./ExplorerItem";
 import JSImage from "/assets/javascript.webp";
-import HTMLImage from "/assets/html.webp";
+// import HTMLImage from "/assets/html.webp"; // No longer needed for README
 import JSONImage from "/assets/json.webp";
 import CSSImage from "/assets/css.webp";
 import TSImage from "/assets/typescript.webp";
+import { SiMarkdown } from "react-icons/si"; // Import Markdown icon
 
 interface Props {
   selectedPage: string;
@@ -18,7 +19,7 @@ const Explorer = ({ onSelectPage }: Props) => {
   const [isOpen, setIsOpen] = useState(true);
   const pages = [
     { Label: "home.js", Icon: JSImage, boxSize: "14px", Link: "/" },
-    { Label: "about.html", Icon: HTMLImage, boxSize: "15px", Link: "/about" },
+    { Label: "README.md", Icon: SiMarkdown, boxSize: "15px", Link: "/about" }, // Updated line
     {
       Label: "projects.json",
       Icon: JSONImage,

@@ -1,9 +1,10 @@
 import { HStack, useColorModeValue } from "@chakra-ui/react";
 import JSImage from "/assets/javascript.webp";
-import HTMLImage from "/assets/html.webp";
+// import HTMLImage from "/assets/html.webp"; // No longer needed
 import JSONImage from "/assets/json.webp";
 import CSSImage from "/assets/css.webp";
 import TSImage from "/assets/typescript.webp";
+import { SiMarkdown } from "react-icons/si"; // Import Markdown icon
 import TabsBarItem from "./TabsBarItem";
 
 interface Props {
@@ -15,7 +16,7 @@ const TabsBar = ({ selectedTab, onSelectTab }: Props) => {
   const backgroundColor = useColorModeValue("gray-100", "gray.900");
   const tabs = [
     { Label: "home.js", Icon: JSImage, boxSize: "14px", Link: "/" },
-    { Label: "about.html", Icon: HTMLImage, boxSize: "15px", Link: "/about" },
+    { Label: "README.md", Icon: SiMarkdown, boxSize: "15px", Link: "/about" }, // Updated line
     {
       Label: "projects.json",
       Icon: JSONImage,

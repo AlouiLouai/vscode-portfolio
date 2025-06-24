@@ -1,8 +1,9 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image, Text, Icon as ChakraIcon } from "@chakra-ui/react"; // Import ChakraIcon for react-icons
 import { useNavigate } from "react-router-dom";
+import { IconType } from "react-icons"; // Import IconType
 
 interface Props {
-  Icon: string;
+  Icon: string | IconType; // Allow Icon to be a string (image path) or IconType
   Label: string;
   boxSize: string;
   Link: string;
@@ -25,7 +26,11 @@ const ExplorerItem = ({ Icon, Label, boxSize, Link, onSelectPage }: Props) => {
       _hover={{ bg: "gray.800" }}
       onClick={handleClick}
     >
-      <Image boxSize={boxSize} src={Icon} />
+      {typeof Icon === "string" ? (
+        <Image boxSize={boxSize} src={Icon} />
+      ) : (
+        <ChakraIcon as={Icon} boxSize={boxSize} />
+      )}
       <Text
         fontSize="15px"
         width="100%"
