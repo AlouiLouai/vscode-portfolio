@@ -4,7 +4,7 @@ export const aboutMe = {
     "Experienced in leadership, teaching, and mentoring, having served as a military reserve officer with a background in web development. Skilled in front-end and back-end development, as well as UI/UX design, and can deliver results under pressure. Passionate about building scalable web applications and contributing to innovative projects.",
   ],
   cvPath: "/assets/CV.pdf", // Upload your own CV in /public/assets as CV.pdf
-  cvFileNameAfterDownload: "Kareem Hamouda CV.pdf", // This is what the name of the file is going to be when downloaded
+  cvFileNameAfterDownload: "Louai_Aloui CV.pdf", // This is what the name of the file is going to be when downloaded
 };
 
 export const technicalSkills: Record<string, string[]> = {

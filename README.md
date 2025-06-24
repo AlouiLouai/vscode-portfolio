@@ -1,4 +1,4 @@
-# Kareem Hamouda's Portfolio with the Visual Studio Code Theme
+# Louai Aloui's Portfolio with the Visual Studio Code Theme
 
 ## Table of Contents
 
@@ -127,7 +127,3 @@ If you'd like to use your own API instance:
 
 ---
 
-## Author
-
-- Website – [Kareem Hamouda](https://vs-code-themed-portfolio-theta.vercel.app/)
-- LinkedIn – [@Kareem Hamouda](https://www.linkedin.com/in/kareem-hamouda/)
