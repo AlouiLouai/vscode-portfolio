@@ -22,15 +22,17 @@ export const projects = [
     Description:
       "e commerce selling pdfs lessons to primary school students",
     Technologies: ["Nextjs", "supabase", "azure blob storage"],
-    Source: "(coming soon)",
-    Demo: "(coming soon)",
+    Source: "",
+    Demo: "",
+    isComingSoon: true,
   },
   {
     ImageURL: "/assets/project-vscode.webp",
     Title: "Lou Apply",
     Description: "linkedin scrapper based on user search criteria.",
     Technologies: ["Nextjs", "Flask"],
-    Source: "(coming soon)",
-    Demo: "(coming soon)",
+    Source: "https://github.com/AlouiLouai/linkedin-job-scrapper",
+    Demo: "https://linkedin-job-scrapper.vercel.app/",
+    isComingSoon: true,
   },
 ];

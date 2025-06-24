@@ -5,6 +5,7 @@ import {
   HStack,
   Link,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
 import ProjectTech from "./ProjectTech";
 
@@ -15,6 +16,7 @@ interface Props {
   Technologies: string[];
   Source?: string;
   Demo?: string;
+  isComingSoon?: boolean;
 }
 
 const Project = ({
@@ -24,6 +26,7 @@ const Project = ({
   Technologies,
   Source,
   Demo,
+  isComingSoon,
 }: Props) => {
   const cardBg = useColorModeValue("rgba(1, 22, 39, 0.8)", "gray.900");
   const textColor = useColorModeValue("nightOwl.text", "whiteAlpha.900");
@@ -76,36 +79,48 @@ const Project = ({
           ))}
         </HStack>
 
-        {(Source || Demo) && (
-          <HStack spacing={4} marginTop="auto">
-            {Source && (
-              <Link
-                href={Source}
-                color={accentColor}
-                target="_blank"
-                rel="noopener noreferrer"
-                fontSize="sm"
-                fontWeight="semibold"
-                _hover={{ textDecoration: "underline" }}
-              >
-                Source
-              </Link>
-            )}
-            {Demo && (
-              <Link
-                href={Demo}
-                color={accentColor}
-                target="_blank"
-                rel="noopener noreferrer"
-                fontSize="sm"
-                fontWeight="semibold"
-                _hover={{ textDecoration: "underline" }}
-              >
-                Demo
-              </Link>
-            )}
-          </HStack>
-        )}
+        <HStack spacing={4} marginTop="auto">
+          {isComingSoon ? (
+            <Button
+              isDisabled
+              colorScheme="gray"
+              variant="outline"
+              fontSize="sm"
+              fontWeight="semibold"
+            >
+              Coming soon
+            </Button>
+          ) : (
+            <>
+              {Source && (
+                <Link
+                  href={Source}
+                  color={accentColor}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  fontSize="sm"
+                  fontWeight="semibold"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  Source
+                </Link>
+              )}
+              {Demo && (
+                <Link
+                  href={Demo}
+                  color={accentColor}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  fontSize="sm"
+                  fontWeight="semibold"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  Demo
+                </Link>
+              )}
+            </>
+          )}
+        </HStack>
       </VStack>
     </VStack>
   );
