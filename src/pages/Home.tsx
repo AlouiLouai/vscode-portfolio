@@ -81,7 +81,7 @@ const Home = ({ setPage }: Props) => {
             letterSpacing="wide"
             color={headingColor}
           >
-            KAREEM HAMOUDA
+            LOUAI ALOUI
           </Text>
           <Text
             fontSize={{ base: "lg", md: "xl" }}
@@ -89,7 +89,7 @@ const Home = ({ setPage }: Props) => {
             color={accentColor}
             mb={{ base: 6, md: 10 }}
           >
-            Full Stack Developer | MERN
+            Software Engineer | Full Stack (Node.js/Python) | AWS | AI Workflow Automation | n8n | Agent Builder | MCP
           </Text>
         </Box>
 

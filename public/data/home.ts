@@ -1,6 +1,6 @@
 import { IoMdMail } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaPhoneAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaPhoneAlt, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaUniversity } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
@@ -10,56 +10,64 @@ export const homeData = {
   // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
   // Of course it's best to convert your image file type to webp for better performance on the web!
   // The links are optional
-  myImage: "/assets/my_image.webp",
+  myImage: "/assets/my_image.webp", // You might want to update this image path
   contactInfo: [
     {
       Icon: IoMdMail,
-      Label: "kareem.e.hamouda@gmail.com",
-      Link: "/contact", // This refers to the Contact page in the website, you can change it to whatever you like
+      Label: "louaialoui1993@gmail.com",
+      Link: "mailto:louaialoui1993@gmail.com",
     },
     {
       Icon: FaLocationDot,
-      Label: "Cairo, Egypt",
-      Link: "https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594885,31.2584644,13z", // This is just a simple location of my city
+      Label: "Tunis, Tunisia",
+      // You can add a Google Maps link if you want
+      // Link: "https://www.google.com/maps/place/Tunis",
     },
     {
       Icon: FaPhoneAlt,
-      Label: "+20 115 111 9085",
-      Link: "tel:+201151119085",
+      Label: "+216 53 317 696",
+      Link: "tel:+21653317696",
     },
   ],
   education: [
     {
       Icon: FaUniversity,
-      Label: "Ain Shams University",
-      Link: "https://www.asu.edu.eg/",
+      Label: "Honoris United Universities (ESPRIT)",
+      // Add a link to the university if available
+      // Link: "https://www.esprit.tn/",
     },
     {
       Icon: FaGraduationCap,
-      Label: "Bachelor's Degree in Computer Science",
-      Link: "https://cis.asu.edu.eg/",
+      Label: "Software engineering Degree",
+      // Add a link if available
+      // Link: "https://www.esprit.tn/",
     },
   ],
   social: [
     {
       Icon: FaGithub,
-      Label: "GitHub",
-      Link: "https://github.com/KareemEhab",
+      Label: "Github",
+      Link: "https://github.com/alouilouai",
     },
     {
       Icon: FaLinkedin,
-      Label: "LinkedIn",
-      Link: "https://www.linkedin.com/in/kareem-hamouda/",
+      Label: "Linkedin",
+      Link: "https://www.linkedin.com/in/louai-aloui-521094111/",
     },
     {
       Icon: FaFacebook,
       Label: "Facebook",
-      Link: "https://www.facebook.com/kareem.ehab.37",
+      Link: "https://www.facebook.com/louai.aloui.2025/",
     },
     {
       Icon: FaInstagram,
       Label: "Instagram",
-      Link: "https://www.instagram.com/kareem.ehabz/",
+      Link: "https://www.instagram.com/louaialoui1993/",
+    },
+    {
+      Icon: FaYoutube,
+      Label: "Youtube",
+      Link: "https://www.youtube.com/@louaialoui-3",
     },
   ],
 };
