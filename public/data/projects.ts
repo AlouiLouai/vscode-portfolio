@@ -30,7 +30,7 @@ export const projects = [
     Title: "Lou Apply",
     Description: "linkedin scrapper based on user search criteria.",
     Technologies: ["Nextjs", "Flask"],
-    Source: "https://github.com/AlouiLouai/linkedin-job-scrapper",
-    Demo: "https://linkedin-job-scrapper.vercel.app/",
+    Source: "(coming soon)",
+    Demo: "(coming soon)",
   },
 ];
