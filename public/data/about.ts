@@ -1,7 +1,6 @@
 export const aboutMe = {
   description: [
-    "A Full Stack Developer (MERN) with a degree in Computer Science (Information Systems) from Ain Shams University and 9 months of professional training at Information Technology Institute (ITI) in Web & UI Development.",
-    "Experienced in leadership, teaching, and mentoring, having served as a military reserve officer with a background in web development. Skilled in front-end and back-end development, as well as UI/UX design, and can deliver results under pressure. Passionate about building scalable web applications and contributing to innovative projects.",
+    "I'm a mid-level full-stack JavaScript developer with 3+ years of experience building scalable web applications. While my core strengths are in JavaScript (Node.js, React, Next.js, NestJS), I've recently been working with Python and Flask in a hedge fund environment—diving deep into data-heavy, high-performance systems.\n\nMy passion lies in blending backend efficiency with frontend elegance, often experimenting with cutting-edge AI tools to push project capabilities even further. Whether I’m orchestrating microservices with Kafka, integrating LangChain or Azure AI for smarter apps, or designing scalable architectures using Docker and n8n, I always aim to build tech that’s fast, smart, and future-ready.\n\nCurrently exploring new job opportunities where I can contribute to impactful products, deepen my backend/AI expertise, and grow within a collaborative, ambitious team.",
   ],
   cvPath: "/assets/CV.pdf", // Upload your own CV in /public/assets as CV.pdf
   cvFileNameAfterDownload: "Louai_Aloui CV.pdf", // This is what the name of the file is going to be when downloaded

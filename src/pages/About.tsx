@@ -64,6 +64,7 @@ const About = ({ setPage }: Props) => {
             fontSize={{ base: "lg", md: "xl" }}
             mb={idx === 0 ? 6 : 0}
             lineHeight="tall"
+            whiteSpace="pre-line"
           >
             {text}
           </Text>
