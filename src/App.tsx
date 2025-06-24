@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import TabsBar from "./components/TabsBar";
 import { useState } from "react";
-import About from "./pages/About";
+import README from "./pages/README";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -52,7 +52,7 @@ function App() {
             <Route path="/" element={<Home setPage={setSelectedPage} />} />
             <Route
               path="/about"
-              element={<About setPage={setSelectedPage} />}
+              element={<README setPage={setSelectedPage} />}
             />
             <Route
               path="/projects"

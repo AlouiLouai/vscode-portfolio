@@ -1,8 +1,9 @@
-import { HStack, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import { HStack, Image, Text, useColorModeValue, Icon as ChakraIcon } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { IconType } from "react-icons";
 
 interface Props {
-  Icon: string;
+  Icon: string | IconType;
   Label: string;
   boxSize: string;
   selectedTab: string;
@@ -54,7 +55,11 @@ const TabsBarItem = ({
       }}
     >
       <HStack gap={1} alignItems="center">
-        <Image boxSize={boxSize} src={Icon} />
+        {typeof Icon === "string" ? (
+          <Image boxSize={boxSize} src={Icon} />
+        ) : (
+          <ChakraIcon as={Icon} boxSize={boxSize} />
+        )}
         <Text
           fontSize="14px"
           width="100%"
