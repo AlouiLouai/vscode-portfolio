@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 interface Props {
   Icon: IconType;
   Label: string;
-  Link: string;
+  Link?: string; // Made Link optional
 }
 
 const HomeItem = ({ Icon, Label, Link }: Props) => {
