@@ -34,13 +34,13 @@ export const homeData = {
       Icon: FaUniversity,
       Label: "Honoris United Universities (ESPRIT)",
       // Add a link to the university if available
-      // Link: "https://www.esprit.tn/",
+      Link: "https://www.esprit.tn/",
     },
     {
       Icon: FaGraduationCap,
       Label: "Software engineering Degree",
       // Add a link if available
-      // Link: "https://www.esprit.tn/",
+      Link: "https://www.esprit.tn/", // Assuming this is also the correct link for the degree
     },
   ],
   social: [
