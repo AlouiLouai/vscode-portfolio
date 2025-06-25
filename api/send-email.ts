@@ -48,8 +48,8 @@ export default async function handler(
     // According to Resend SDK v2+, a successful call returns { id: string }.
     // Errors are thrown and should be caught by the catch block.
     // The 'data.error' check is less likely needed if errors are always thrown.
-    if (data.id) {
-      return res.status(200).json({ message: 'Email sent successfully!', id: data.id });
+    if (data.data?.id) {
+      return res.status(200).json({ message: 'Email sent successfully!', id: data.data.id });
     } else if (data.error) { // This handles cases where Resend might return an error object without throwing
       console.error('Resend API Error Object:', data.error);
       const resendError = data.error as { name?: string; message?: string; statusCode?: number };
