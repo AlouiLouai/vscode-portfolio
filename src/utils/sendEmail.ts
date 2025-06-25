@@ -1,39 +1,51 @@
-import { Resend } from 'resend';
-import { receiver_email } from "../../public/data/contact";
+// No longer imports Resend or receiver_email directly here
+// as that logic is now in the API route.
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-export const sendEmail = async (values: {
+interface SendEmailValues {
   name: string;
   email: string;
   subject: string;
   message: string;
-}) => {
-  const { name, email, subject, message } = values;
+}
 
+interface SendEmailResponse {
+  status: number;
+  message?: string;
+  error?: string;
+  id?: string;
+}
+
+export const sendEmail = async (values: SendEmailValues): Promise<SendEmailResponse> => {
   try {
-    const data = await resend.emails.send({
-      from: 'louaialoui1993@gmail.com',
-      to: receiver_email,
-      subject: subject,
-      html: `
-        <h1>New Contact Form Submission</h1>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
     });
 
-    if (data.error) {
-      console.error("Error sending email:", data.error);
-      return { status: 500, error: data.error.message };
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      // If response is not OK, use error message from API response body if available
+      console.error("Error sending email:", responseData.error || response.statusText);
+      return {
+        status: response.status,
+        error: responseData.error || `Request failed with status ${response.status}`
+      };
     }
 
-    return { status: 200 };
-  } catch (error) {
-    console.error("Error sending email:", error);
-    // Ensure a compatible error response if needed by the calling component
-    return { status: 500, error: error instanceof Error ? error.message : "Unknown error" };
+    // Successfully sent, responseData might contain { message, id }
+    return {
+      status: response.status, // Should be 200
+      message: responseData.message,
+      id: responseData.id
+    };
+
+  } catch (error: any) {
+    console.error("Network or other error sending email:", error);
+    return {
+      status: 500, // Generic server/network error status
+      error: error.message || "An unexpected error occurred."
+    };
   }
 };
