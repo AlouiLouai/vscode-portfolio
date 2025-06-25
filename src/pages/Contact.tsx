@@ -41,21 +41,30 @@ const Contact = ({ setPage }: Props) => {
     setLoading(true);
     try {
       const result = await sendEmail(values);
-      if (result.status === 200)
+      if (result.status === 200) {
         toast({
           title: "Message Sent",
-          description: "Your message has been sent successfully!",
+          description: result.message || "Your message has been sent successfully!",
           status: "success",
           duration: 3000,
           isClosable: true,
         });
-
-      resetForm();
-      setMessageLines(1);
-    } catch (error) {
+        resetForm();
+        setMessageLines(1);
+      } else {
+        // Handle errors reported by the API (e.g., validation, server errors from API route)
+        toast({
+          title: "Error Sending Message",
+          description: result.error || "There was a problem sending your message. Please try again.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (error: any) { // Catch network errors or other issues not handled by the API's response structure
       toast({
-        title: "Error Sending Message",
-        description: "There was a problem sending your message.",
+        title: "Network Error",
+        description: error.message || "Could not connect to the server. Please check your internet connection.",
         status: "error",
         duration: 3000,
         isClosable: true,
