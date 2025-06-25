@@ -7,8 +7,8 @@ import {
   GridItem,
   Box,
   Heading,
-  keyframes,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 import { FaDownload } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { aboutMe, technicalSkills } from "../../public/data/about";

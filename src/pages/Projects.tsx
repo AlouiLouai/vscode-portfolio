@@ -1,4 +1,5 @@
-import { SimpleGrid, keyframes } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
+import { keyframes } from '@emotion/react';
 import { useEffect } from "react";
 import Project from "../components/Projects/Project";
 import { projects } from "../../public/data/projects";
