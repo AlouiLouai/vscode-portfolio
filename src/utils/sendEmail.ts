@@ -30,7 +30,7 @@ export const sendEmail = async (values: {
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
-      reply_to: email, // Set the sender's email as the reply-to address
+      replyTo: email, // Set the sender's email as the reply-to address
     });
 
     console.log('Email sent successfully:', data);
@@ -43,7 +43,7 @@ export const sendEmail = async (values: {
       console.error('Error sending email via Resend:', data.error);
       // Mimic the structure of the old response for the calling code if needed,
       // or adjust the calling code to handle Resend's specific error structure.
-      return { status: data.error.statusCode || 500, error: data.error.message };
+      return { status: data?.error.name || 500, error: data.error.message };
     }
     return { status: 200, data }; // Indicate success
 
