@@ -17,7 +17,7 @@ interface SendEmailResponse {
 
 export const sendEmail = async (values: SendEmailValues): Promise<SendEmailResponse> => {
   try {
-    const response = await fetch("/api/send-email", {
+    const response = await fetch("http://localhost:3000/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
