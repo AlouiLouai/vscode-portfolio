@@ -1,6 +1,6 @@
 import { homeData } from "./home"; // Assuming home.ts is in the same directory
 
-export const receiver_email = "louaialoui1993@gmail.com"; // Your email for recieving emails using the email service.
+export const receiver_email = "kareem.e.a.hamouda@gmail.com"; // Your email for recieving emails using the email service.
 // The emails are sent using a personally developed email api: https://github.com/KareemEhab/email-sender
 // Feel free to clone the email service as well and deploy your own, you'll find all the steps in the README there.
 // Make sure to update /src/utils/sendEmail.ts with your own deployed link.

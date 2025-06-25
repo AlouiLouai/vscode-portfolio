@@ -9,7 +9,7 @@ import {
 import { Formik, Form } from "formik";
 import { useState, useEffect } from "react";
 import { validationSchema, FormValues } from "../utils/validation";
-import { sendEmail } from "../utils/sendEmail";
+// sendEmail import will be removed as we're using an API route now
 
 import ContactDetails from "../components/Contact/ContactDetails";
 import ContactCodeLines from "../components/Contact/ContactCodeLines";
@@ -40,22 +40,40 @@ const Contact = ({ setPage }: Props) => {
   const handleSubmit = async (values: FormValues, { resetForm }: any) => {
     setLoading(true);
     try {
-      const result = await sendEmail(values);
-      if (result.status === 200)
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
         toast({
           title: "Message Sent",
-          description: "Your message has been sent successfully!",
+          description: result.message || "Your message has been sent successfully!",
           status: "success",
           duration: 3000,
           isClosable: true,
         });
-
-      resetForm();
-      setMessageLines(1);
+        resetForm();
+        setMessageLines(1);
+      } else {
+        toast({
+          title: "Error Sending Message",
+          description: result.error || "There was a problem sending your message.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
     } catch (error) {
+      console.error("Contact form submission error:", error);
       toast({
         title: "Error Sending Message",
-        description: "There was a problem sending your message.",
+        description: "There was a problem sending your message. Please try again.",
         status: "error",
         duration: 3000,
         isClosable: true,
