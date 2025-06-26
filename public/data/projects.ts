@@ -1,6 +1,6 @@
 export const projects = [
   {
-    ImageURL: "/assets/project-eshterely.webp",
+    ImageURL: "/assets/job_advisor_app.png",
     Title: "Job Advisor",
     Description:
       "AI-powered web app that analyzes your CV and a job description to instantly calculate your match score, provide tailored feedback, and recommend whether you should apply — helping you make smarter, faster career decisions",
@@ -17,7 +17,7 @@ export const projects = [
     Demo: "https://job-application-advisor.vercel.app/",
   },
   {
-    ImageURL: "/assets/project-gamehub.webp",
+    ImageURL: "/assets/landing.png",
     Title: "EduForm",
     Description:
       "e commerce selling pdfs lessons to primary school students",
@@ -27,7 +27,7 @@ export const projects = [
     isComingSoon: true,
   },
   {
-    ImageURL: "/assets/project-vscode.webp",
+    ImageURL: "/assets/linked_job_scrapper.png",
     Title: "Lou Apply",
     Description: "linkedin scrapper based on user search criteria.",
     Technologies: ["Nextjs", "Flask"],

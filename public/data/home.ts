@@ -10,7 +10,7 @@ export const homeData = {
   // To use your own photo, just place it in /public/assets and write the link as I did: eg: /assets/my_image.jpg
   // Of course it's best to convert your image file type to webp for better performance on the web!
   // The links are optional
-  myImage: "/assets/my_image.webp", // You might want to update this image path
+  myImage: "/assets/louai.png", // You might want to update this image path
   contactInfo: [
     {
       Icon: IoMdMail,
