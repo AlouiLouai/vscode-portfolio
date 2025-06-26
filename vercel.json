@@ -14,14 +14,4 @@
     { "source": "/api/(.*)", "destination": "/api/(.*)" },
     { "source": "/(.*)", "destination": "/" }
   ],
-  "headers": [
-    {
-      "source": "/api/send-email",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
-        { "key": "Access-Control-Allow-Methods", "value": "POST, OPTIONS" }
-      ]
-    }
-  ]
 }
