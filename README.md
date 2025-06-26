@@ -10,7 +10,7 @@
 - [How to Use](#how-to-use)
 - [Make It Your Own](#make-it-your-own)
 - [Deploy on Vercel](#deploy-on-vercel)
-- [Use Your Own Email API](#use-your-own-email-api)
+- [Going to Production](#going-to-production)
 - [Author](#author)
 
 ---
@@ -97,33 +97,13 @@ You can **deploy this portfolio in minutes** using [Vercel](https://vercel.com/)
 
 ---
 
-## Use Your Own Email API
+## Going to Production
 
-This project uses a **custom-built backend** deployed on [Vercel](https://vercel.com/), which utilizes **Nodemailer** for email functionality.
+This project is already configured for easy production deployment through Vercel.
 
-If you'd like to use your own API instance:
+Vercel handles the build process and deploys your portfolio automatically. For detailed steps on how to deploy, please refer to the [Deploy on Vercel](#deploy-on-vercel) section.
 
-1. Visit the backend repo: [https://github.com/KareemEhab/email-sender](https://github.com/KareemEhab/email-sender)
-2. Follow the instructions in its `README.md` to:
-   - Set up the email server
-   - Configure a Gmail to be used to send emails
-   - Deploy the API on Vercel or your preferred platform
-3. Once deployed, update the frontend file:
-   - Open `/src/utils/sendEmail.ts`
-   - Replace the fetch URL with your deployed API endpoint:
-     ```ts
-     return await fetch("https://your-vercel-deployment.vercel.app/send", {
-       method: "POST",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
-         name,
-         email,
-         subject,
-         message,
-         receiver_email,
-       }),
-     });
-     ```
+No additional server setup or complex configuration is needed to take your portfolio live.
 
 ---
 
