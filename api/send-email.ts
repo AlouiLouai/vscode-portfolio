@@ -9,15 +9,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Handle preflight OPTIONS request
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    // Explicitly send a response for OPTIONS.
+    // Vercel might require .send() or .end() to properly terminate the response.
+    return res.status(204).send(''); // 204 No Content is often preferred for OPTIONS
   }
 
   if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST']);
+    // Ensure Allow header is set before sending the response body for 405.
+    res.setHeader('Allow', 'POST, OPTIONS');
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const { name, email, subject, message } = req.body;
+  // Ensure body is parsed, Vercel might handle this automatically,
+  // but let's be defensive. req.body should be populated by Vercel's body parser.
+  const { name, email, subject, message } = req.body || {};
 
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
