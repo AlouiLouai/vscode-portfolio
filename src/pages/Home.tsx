@@ -97,27 +97,6 @@ const Home = ({ setPage }: Props) => {
         {renderSection(homeData.education)}
         {renderSection(homeData.social)}
       </VStack>
-
-      <Box position="relative" animation={`${fadeIn} 0.5s ease-out`}>
-        <Box
-          position="absolute"
-          inset="0"
-          borderRadius="50%"
-          bgGradient={`radial(${accentColor}, transparent 70%)`}
-          opacity={useColorModeValue("0.1", "0.15")}
-          filter="blur(15px)"
-        />
-        <Image
-          src={homeData.myImage}
-          width={{ base: "250px", sm: "300px", md: "400px", lg: "425px" }}
-          height="auto"
-          borderRadius="50%"
-          border="4px solid"
-          borderColor={accentColor}
-          transition="transform 0.3s"
-          _hover={{ transform: "scale(1.02)" }}
-        />
-      </Box>
     </Flex>
   );
 };
