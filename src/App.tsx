@@ -3,14 +3,16 @@ import ToolBar from "./components/ToolBar";
 import ActivityBar from "./components/ActivityBar";
 import Explorer from "./components/Explorer";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
 import TabsBar from "./components/TabsBar";
-import { useState } from "react";
-import README from "./pages/README";
+import { useState, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Theme from "./pages/Theme";
+
+// Lazy load page components
+const Home = lazy(() => import("./pages/Home"));
+const README = lazy(() => import("./pages/README"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Theme = lazy(() => import("./pages/Theme"));
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home.js");
@@ -48,25 +50,27 @@ function App() {
       <GridItem area="main" overflowX={"auto"}>
         <TabsBar selectedTab={selectedPage} onSelectTab={setSelectedPage} />
         <Box overflowY="auto" height="calc(100% - 40px)">
-          <Routes>
-            <Route path="/" element={<Home setPage={setSelectedPage} />} />
-            <Route
-              path="/about"
-              element={<README setPage={setSelectedPage} />}
-            />
-            <Route
-              path="/projects"
-              element={<Projects setPage={setSelectedPage} />}
-            />
-            <Route
-              path="/contact"
-              element={<Contact setPage={setSelectedPage} />}
-            />
-            <Route
-              path="/theme"
-              element={<Theme setPage={setSelectedPage} />}
-            />
-          </Routes>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home setPage={setSelectedPage} />} />
+              <Route
+                path="/about"
+                element={<README setPage={setSelectedPage} />}
+              />
+              <Route
+                path="/projects"
+                element={<Projects setPage={setSelectedPage} />}
+              />
+              <Route
+                path="/contact"
+                element={<Contact setPage={setSelectedPage} />}
+              />
+              <Route
+                path="/theme"
+                element={<Theme setPage={setSelectedPage} />}
+              />
+            </Routes>
+          </Suspense>
         </Box>
       </GridItem>
 
